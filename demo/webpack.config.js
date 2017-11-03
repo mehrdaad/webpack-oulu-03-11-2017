@@ -27,7 +27,15 @@ const commonConfig = merge([
   parts.lintJavaScript({ include: PATHS.app }),
 ]);
 
-const productionConfig = merge([parts.extractCSS({ use: "css-loader" })]);
+const productionConfig = merge([
+  parts.extractCSS({ use: "css-loader" }),
+  parts.loadImages({
+    options: {
+      limit: 15000,
+      name: "[name].[ext]",
+    },
+  }),
+]);
 
 const developmentConfig = merge([
   parts.devServer({
@@ -36,6 +44,7 @@ const developmentConfig = merge([
     port: process.env.PORT,
   }),
   parts.loadCSS(),
+  parts.loadImages(),
 ]);
 
 module.exports = env => {
