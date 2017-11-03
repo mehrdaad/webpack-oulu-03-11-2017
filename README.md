@@ -5,4 +5,5 @@
 
 ## Goals
 
-*
+* Understand the basic concepts of webpack.
+* Understand the capabilities of webpack.
