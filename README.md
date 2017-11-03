@@ -7,3 +7,36 @@
 
 * Understand the basic concepts of webpack.
 * Understand the capabilities of webpack.
+
+## Examples
+
+**Loader**
+
+```javascript
+module.exports = (input) => input + input;
+```
+
+**Resolve**
+
+```javascript
+import foo from 'foo'; // resolve node_modules/
+
+...
+```
+
+```javascript
+const config = {
+  resolve: {
+    alias: {
+      foo: path.join(__dirname, 'foo.js')
+    },
+    extensions: [
+      '.jsx'
+    ],
+    modules: [
+      path.join(__dirname, 'my_modules'),
+      'node_modules'
+    ],
+  },
+}
+```
