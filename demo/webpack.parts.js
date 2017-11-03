@@ -1,4 +1,5 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const BabelWebpackPlugin = require("babel-minify-webpack-plugin");
 
 exports.devServer = ({ host, port } = {}) => ({
   devServer: {
@@ -98,4 +99,8 @@ exports.loadJavaScript = ({ include, exclude }) => ({
       },
     ],
   },
+});
+
+exports.minifyJavaScript = () => ({
+  plugins: [new BabelWebpackPlugin()],
 });

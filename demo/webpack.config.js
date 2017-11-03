@@ -45,6 +45,7 @@ const productionConfig = merge([
       }),
     ],
   },
+  parts.minifyJavaScript(),
 ]);
 
 function isVendor({ resource }) {
